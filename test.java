@@ -24,12 +24,16 @@ public class test {
         int y=scan.nextInt();
         four[y][x]="x";
         printAray(four);
+        ThreeInARow(four, x, y);
         System.out.println("pls input x");
         x=scan.nextInt();
         System.out.println("pls input y");
         y=scan.nextInt();
         four[y][x]="o";
         printAray(four);
+        ThreeInARow(four, x, y);
+        
+
         }
     }
 
@@ -40,6 +44,11 @@ public class test {
                 System.out.print(aray[I][S]);
             }
             System.out.println();
+        }
+    }
+    public static void ThreeInARow(String[][] aray, int x, int y){
+        if(aray[0][x].eguals(aray[1][x])&& aray[1][x].eguals(aray[2][x])&&){
+        System.out.println(aray [y][x]+" wins");
         }
     }
 }
