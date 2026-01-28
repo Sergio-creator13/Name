@@ -18,20 +18,22 @@ public class test {
         }
         boolean isRunning=true;
         while(isRunning){
+            System.out.println("pls input x");
         int x=scan.nextInt();
+        System.out.println("pls input y");
         int y=scan.nextInt();
         four[y][x]="x";
         printAray(four);
+        System.out.println("pls input x");
         x=scan.nextInt();
+        System.out.println("pls input y");
         y=scan.nextInt();
-        four[x][y]="o";
+        four[y][x]="o";
         printAray(four);
-        System.out.println("pls input row");
-        int row=scan.nextInt();
-        System.out.println(row);
+        }
     }
 
-    }
+    
     public static void printAray(String[][] aray){
         for (int I=0;I < 3;I++){
             for (int S=0;S < 3;S++){
