@@ -16,20 +16,41 @@ public class test {
             }
             System.out.println();
         }
+        int checker=0;
         boolean isRunning=true;
+        int x=0;
+        int y=0;
         while(isRunning){
+            boolean tracker=false;
+            while(tracker==false){
             System.out.println("pls input x");
-        int x=scan.nextInt();
+        x=scan.nextInt();
         System.out.println("pls input y");
-        int y=scan.nextInt();
+        y=scan.nextInt();
+        if(four[y][x].equals("_")){ 
         four[y][x]="x";
+        tracker=true;
+        checker+=1;
+    }
+}
         printAray(four);
         ThreeInARow(four, x, y);
+        if(checker==9){
+            System.out.println("its a tie");
+            System.exit(0);
+        }
+        tracker=false;
+        while(tracker==false){
         System.out.println("pls input x");
         x=scan.nextInt();
         System.out.println("pls input y");
         y=scan.nextInt();
+        if(four[y][x].equals("_")){
         four[y][x]="o";
+        tracker=true;
+        checker+=1;
+    }
+}
         printAray(four);
         ThreeInARow(four, x, y);
         
@@ -47,8 +68,21 @@ public class test {
         }
     }
     public static void ThreeInARow(String[][] aray, int x, int y){
-        if(aray[0][x].eguals(aray[1][x])&& aray[1][x].eguals(aray[2][x])&&){
-        System.out.println(aray [y][x]+" wins");
+        if(aray[0][x].equals(aray[1][x])&& aray[1][x].equals(aray[2][x])){
+        System.out.println(aray[y][x]+" wins");
+        System.exit(0);
+        }
+        if(aray[y][0].equals(aray[y][1])&& aray[y][1].equals(aray[y][2])){
+            System.out.println(aray[y][x]+" wins");
+            System.exit(0);
+        }
+        if(aray[0][0].equals(aray[1][1])&& aray[1][1].equals(aray[2][2])&& aray[1][1].equals(aray[y][x])){
+            System.out.println(aray[y][x]+" wins");
+            System.exit(0);
+        }
+        if(aray[2][0].equals(aray[1][1])&& aray[1][1].equals(aray[0][2])&& aray[1][1].equals(aray[y][x])){
+            System.out.println(aray[y][x]+" wins");
+            System.exit(0);
         }
     }
 }
